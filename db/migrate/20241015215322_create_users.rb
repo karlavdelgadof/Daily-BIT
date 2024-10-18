@@ -2,7 +2,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
   def change
     create_table :users do |t|
       t.string :name, null: false
-      t.string :email
+      t.string :email, null: false
       t.decimal :balance_usd, precision: 20, scale: 2, default: 0.0
       t.decimal :balance_btc, precision: 20, scale: 8, default: 0.0
 

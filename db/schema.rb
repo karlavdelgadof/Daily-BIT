@@ -23,9 +23,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_15_220323) do
     t.bigint "user_id", null: false
     t.enum "current_transaction", enum_type: "transaction_type"
     t.decimal "amount_sent"
-    t.enum "currency_sent", enum_type: "currency"
+    t.string "currency_sent"
     t.decimal "amount_received"
-    t.enum "currency_received", enum_type: "currency"
+    t.string "currency_received"
     t.decimal "exchange_rate", precision: 20, scale: 8
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_15_220323) do
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
-    t.string "email"
+    t.string "email", null: false
     t.decimal "balance_usd", precision: 20, scale: 2, default: "0.0"
     t.decimal "balance_btc", precision: 20, scale: 8, default: "0.0"
     t.datetime "created_at", null: false
