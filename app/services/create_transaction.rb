@@ -64,6 +64,7 @@ class CreateTransaction < BaseService
   end
 
   def transform_value(value, n = 0)
-    BigDecimal(value.to_s).to_d.round(n)
+    val = value.to_s.gsub(',', '')
+    BigDecimal(val).to_d.round(n)
   end
 end
