@@ -1,24 +1,60 @@
-# README
+# Daily BIT
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Daily BIT is a Ruby on Rails API application that integrates with the CoinDesk API to provide real-time BTC-USD price data. It allows users to perform buy and sell Bitcoin transactions, and features include balance validation and updates.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- **Real-Time Bitcoin Price:** Fetches the latest BTC-USD price using the [CoinDesk API](https://api.coindesk.com/v1/bpi/currentprice.json).
+- **Buy and Sell Transactions:** Users can perform Bitcoin transactions using USD.
+- **Balance Validation and Update:** Ensures users have a sufficient balance of the sent currency and updates balance after transaction accordingly.
+- **Transaction History:** Maintains records of each user's buy and sell transactions.
 
-* System dependencies
+## Development
 
-* Configuration
+To set up the project locally, follow these steps:
 
-* Database creation
+### Installation
 
-* Database initialization
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/karlavdelgadof/Daily-BIT.git
+   cd Daily-BIT
+   ```
 
-* How to run the test suite
+2. Install dependencies:
+   ```bash
+   bundle install
+   ```
 
-* Services (job queues, cache servers, search engines, etc.)
+3. Set up the database:
+   ```bash
+   rails db:create db:migrate 
+   ```
 
-* Deployment instructions
+4. Run the server:
+   ```bash
+   rails server
+   ```
 
-* ...
+5. Visit `http://localhost:3000` in your browser to access the application.
+
+### Running Tests
+
+To run the test suite, use:
+
+```bash
+bundle exec rspec
+```
+
+## API Documentation
+Detailed documentation for the Daily BIT API can be found on Postman:
+
+[Daily BIT API Documentation - Postman]()
+
+## Deployment
+
+The project is currently deployed at:
+
+[Daily BIT API - Live](https://your-deployment-url.com)
+
+
