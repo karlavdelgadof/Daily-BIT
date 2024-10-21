@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe UsersController, type: :controller do
   describe 'POST #create' do
     let(:user_params) do
@@ -7,18 +9,16 @@ RSpec.describe UsersController, type: :controller do
       }
     end
 
-
     context 'with valid parameters' do
       it 'creates a new user' do
-        expect {
+        expect do
           post :create, params: { user: user_params }
-        }.to change(User, :count).by(1)
+        end.to change(User, :count).by(1)
 
         expect(JSON.parse(response.body)).to include('user')
       end
     end
   end
-
 
   describe 'GET #show' do
     let(:user) { create(:user) }
@@ -28,7 +28,6 @@ RSpec.describe UsersController, type: :controller do
       expect(JSON.parse(response.body)).to match(JSON.parse(user.to_json))
     end
   end
-
 
   describe 'PUT #update' do
     let(:user) { create(:user) }
@@ -45,14 +44,13 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-
   describe 'DELETE #destroy' do
     let!(:user) { create(:user) }
 
     it 'deletes the user' do
-      expect {
+      expect do
         delete :destroy, params: { id: user.id }
-      }.to change(User, :count).by(-1)
+      end.to change(User, :count).by(-1)
     end
   end
 end

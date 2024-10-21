@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe TransactionsController, type: :controller do
   let(:user) { create(:user) }
 
@@ -23,11 +25,10 @@ RSpec.describe TransactionsController, type: :controller do
     end
   end
 
-
   describe 'GET #index' do
     before do
-      create(:buy_transaction, user: user)
-      create(:sell_transaction, user: user)
+      create(:buy_transaction, user:)
+      create(:sell_transaction, user:)
     end
 
     it 'returns a list of transactions for the user' do
@@ -36,14 +37,14 @@ RSpec.describe TransactionsController, type: :controller do
     end
   end
 
-
   describe 'GET #show' do
     let(:user) { create(:user) }
-    let(:transaction) { create(:sell_transaction, user: user) }
+    let(:transaction) { create(:sell_transaction, user:) }
 
     it 'returns a specific transaction for the user' do
       get :show, params: { user_id: user.id, id: transaction.id }
-      expect(JSON.parse(response.body)).to include('id', 'current_transaction', 'amount_sent', 'currency_sent', 'currency_received', 'amount_received', 'exchange_rate')
+      expect(JSON.parse(response.body)).to include('id', 'current_transaction', 'amount_sent', 'currency_sent',
+                                                   'currency_received', 'amount_received', 'exchange_rate')
     end
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BitcoinPriceController < ApplicationController
   def show
     result = GetBitcoinPrice.call

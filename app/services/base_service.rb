@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BaseService
   Response = Struct.new(:success?, :payload, :error) do
     def failure?
