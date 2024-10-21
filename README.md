@@ -55,6 +55,6 @@ Detailed documentation for the Daily BIT API can be found on Postman:
 
 The project is currently deployed at:
 
-[Daily BIT API - Live](https://your-deployment-url.com)
+[Daily BIT API - Live](https://daily-bit.onrender.com/)
 
 
