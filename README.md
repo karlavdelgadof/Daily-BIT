@@ -49,7 +49,7 @@ bundle exec rspec
 ## API Documentation
 Detailed documentation for the Daily BIT API can be found on Postman:
 
-[Daily BIT API Documentation - Postman]()
+[Daily BIT API Documentation - Postman](https://red-moon-211001.postman.co/workspace/My-Workspace~a37a6229-046d-45fd-8060-64047480f853/collection/24949874-38af18a2-461c-4a9c-86ef-64b51e374669?action=share&creator=24949874)
 
 ## Deployment
 
